@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dónde Está</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Tu archivo CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"> <!-- Estilos para el carrusel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
+    <style>
+        /* Estilos generales */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Estilos para la sección de bienvenida con carrusel */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Ajusta la altura según tus necesidades */
+            overflow: hidden;
+        }
+
+        .hero .slider img {
+            width: 100%;
+            height: auto; /* Ajustar la altura automáticamente para mantener las proporciones */
+            object-fit: contain; /* Ajustar la imagen dentro del contenedor sin recortes */
+        }
+
+        /* Estilos para la sección de ubicaciones */
+        .locations {
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .locations h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .locations .slider {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .locations .slider img {
+            width: 80%; /* Ajustar el tamaño de las imágenes */
+            height: auto;
+            object-fit: contain; /* Ajustar la imagen dentro del contenedor sin recortes */
+            display: block;
+            margin: 0 auto; /* Centrar las imágenes */
+        }
+
+        .tns-nav {
+            display: none; /* Ocultar botones de navegación */
+        }
+
+        .tns-controls {
+            display: none; /* Ocultar controles de navegación */
+        }
+        .info {
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item img {
+            width: 150px; /* Establece un tamaño fijo para la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: contain; /* Asegura que la imagen no se distorsione */
+            display: block;
+            margin: 0 auto; /* Centra la imagen */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Dónde Está</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#locations">Ubicaciones</a></li>
+                    <li><a href="#info">Información</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="mission" class="mission">
+        <div class="container">
+            <h2>Nuestra Misión</h2>
+            <p>Nuestra misión en "Dónde Está" es promover la conciencia ambiental y facilitar el proceso de reciclaje al proporcionar una plataforma interactiva donde las personas puedan encontrar fácilmente la ubicación de contenedores de reciclaje en su área. Creemos en la importancia de cuidar nuestro planeta y queremos hacer nuestra parte para fomentar prácticas sostenibles y responsables. Al trabajar juntos, podemos crear un futuro más limpio y saludable para las generaciones venideras.</p>
+        </div>
+    </section>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Bienvenido a Dónde Está</h2>
+            <div class="slider" id="hero-slider">
+                <img src="IMAGEN1.jpg" alt="Imagen 1"> <!-- Cambia "IMAGEN1.jpg" por la ruta de tu imagen -->
+            </div>
+        </div>
+    </section>
+
+    <section id="locations" class="locations">
+        <div class="container">
+            <h2>Lugares donde están los contenedores de la escuela</h2>
+            <div class="slider" id="locations-slider">
+                <img src="1.jpg" alt="Ubicación del Contenedor de Pilas 1"> <!-- Cambia "1.jpg" por la ruta de tu imagen -->
+                <img src="2.jpg" alt="Ubicación del Contenedor de Pilas 2">
+                <img src="3.jpg" alt="Ubicación del Contenedor de Pilas 3">
+                <img src="4.jpg" alt="Ubicación del Contenedor de Pilas 4"> <!-- Cambia "4.jpg" por la ruta de tu imagen -->
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="info">
+        <div class="container">
+            <h2>Información sobre Contenedores</h2>
+            <div class="info-item">
+                <h3>Contenedores de Pilas</h3>
+                <img src="pilas.jpg" alt="Icono de Batería">
+                <p>Aquí puedes depositar pilas y baterías usadas.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var heroSlider = tns({
+                container: '#hero-slider',
+                items: 1,
+                slideBy: 'page',
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayButtonOutput: false,
+                controls: false,
+                nav: false
+            });
+
+            var locationsSlider = tns({
+                container: '#locations-slider',
+                items: 1,
+                slideBy: 'page',
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayButtonOutput: false,
+                controls: false,
+                nav: false
+            });
+        });
+    </script>
+</body>
+</html>
